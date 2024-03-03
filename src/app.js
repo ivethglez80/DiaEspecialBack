@@ -1,7 +1,7 @@
 const express = require ("express");
 const morgan = require ("morgan");
 
-const emailRoute = require("../routes/sendEmailRoute");
+const mainRoute = require("../routes");
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(cors());
 
 app.use(express.json()); 
 
-app.use("/", emailRoute);
+app.use(mainRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
