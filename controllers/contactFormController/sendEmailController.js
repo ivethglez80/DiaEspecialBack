@@ -14,8 +14,11 @@ let transporter = nodemailer.createTransport({
 });
 
 const sendEmail = expressAsyncHandler(async (req, res) => {
-  const { nombre, apellido, email, whatsapp, consulta } = req.body;
-  console.log(nombre, apellido, email, whatsapp, consulta);
+  // const { nombre, apellido, email, whatsapp, consulta } = req.body;
+  const { nombre, apellido, email, whatsapp, consulta,
+          novia, novio, eventoFecha, eventoHora, eventoLugar, wppConf, dresscode, bancoNombre, alias, cbu, modelo } = req.body;
+  console.log(nombre, apellido, email, whatsapp, consulta,
+              novia, novio, eventoFecha, eventoHora, eventoLugar, wppConf, dresscode, bancoNombre, alias, cbu, modelo);
 
 
   // PARA ENVIAR DESDE EL WEBSITE A OTROS
@@ -38,6 +41,17 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
       Email: ${email}
       Whatsapp:${whatsapp}
       Consulta: ${consulta}
+      novia: ${novia}
+      novio: ${novio}
+      eventoFecha: ${eventoFecha}
+      eventoHora: ${eventoHora}
+      eventoLugar: ${eventoLugar}
+      wppConf: ${wppConf}
+      dresscode: ${dresscode}
+      bancoNombre: ${bancoNombre}
+      alias: ${alias}
+      cbu: ${cbu}
+      modelo: ${modelo}
     `
   };
 
